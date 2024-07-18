@@ -9,7 +9,7 @@ import streamlit as st
 
 
 
-st.set_page_config(page_title='HS Market Monitor', layout='wide')
+st.set_page_config(page_title='Trading Tool', layout='wide')
 
 st.title('Trading Tool')
     st.markdown('##')
