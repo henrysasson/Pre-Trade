@@ -168,7 +168,15 @@ columns = ["Very strong sell", "Strong Sell", "Sell", "Weak sell", "Neutral", "W
 # Creating the DataFrame
 df = pd.DataFrame([data_values], columns=columns, index=['Values'])
 
-df
+
+col1, col2 = st.columns(2)
+with col1:
+    df
+
+with col2:
+    st.metric(label = 'Actual Reading', value = combined_forecast.iloc[-1])
+    st.text(forecast_metric(combined_forecast.iloc[-1]))
+    
 st.markdown('##')
 
 # Criando subplots com dois gráficos, um embaixo do outro, e ajustando o espaçamento vertical
