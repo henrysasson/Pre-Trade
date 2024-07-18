@@ -21,7 +21,7 @@ def mixed_vol_calc (daily_returns):
     slow_vol_days = 10 * 256
     long_vol = vol.ewm(span=slow_vol_days).mean()
 
-    vol = long_vol * proportion_of_slow_vol + vol * (1 - proportion_of_slow_vol)
+    vol = long_vol * 0.3 + vol * 0.7
 
     return vol
 
