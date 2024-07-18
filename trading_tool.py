@@ -169,7 +169,7 @@ columns = ["Very strong sell", "Strong Sell", "Sell", "Weak sell", "Neutral", "W
 df = pd.DataFrame([data_values], columns=columns, index=['Values'])
 
 df
-
+st.markdown('##')
 
 # Criando subplots com dois gráficos, um embaixo do outro, e ajustando o espaçamento vertical
 fig = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.2)
@@ -199,8 +199,8 @@ fig.update_yaxes(title_text="Forecast", row=1, col=1)
 fig.update_yaxes(title_text="Price", row=2, col=1)
 
 # Configurando o layout
-fig.update_layout( width=1050,  # Largura do gráfico
-                height=900  # Altura do gráfico
+fig.update_layout( width=2000,  # Largura do gráfico
+                height=700  # Altura do gráfico
             )
 
 # Configurando o rangeslider e o rangeselector no eixo X compartilhado
