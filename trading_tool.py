@@ -23,8 +23,6 @@ def mixed_vol_calc (
 
     vol = long_vol * proportion_of_slow_vol + vol * (1 - proportion_of_slow_vol)
 
-    vol = apply_min_vol(vol, vol_abs_min=vol_abs_min)
-
     return vol
 
 
