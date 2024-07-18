@@ -199,7 +199,7 @@ fig.update_yaxes(title_text="Forecast", row=1, col=1)
 fig.update_yaxes(title_text="Price", row=2, col=1)
 
 # Configurando o layout
-fig.update_layout( width=2000,  # Largura do gráfico
+fig.update_layout( width=1500,  # Largura do gráfico
                 height=700  # Altura do gráfico
             )
 
