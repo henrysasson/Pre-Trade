@@ -16,7 +16,7 @@ st.markdown('##')
 
 
 def mixed_vol_calc (daily_returns):
-    vol = daily_returns.ewm(adjust=True, span=35, min_periods=min_periods).std()
+    vol = daily_returns.ewm(adjust=True, span=35, min_periods=35).std()
 
     slow_vol_days = slow_vol_years * 256
     long_vol = vol.ewm(span=slow_vol_days).mean()
@@ -108,7 +108,7 @@ def ewmac (price, Lfast, Lslow=None):
 
 
 
-instrument = st.text_input(label="Choose the instrument (the ticker symbol must be in Yahoo Finance format):", value="")
+instrument = st.text_input(label="Choose the instrument (the ticker symbol must be in Yahoo Finance format):", value="^GSPC")
 
 price = yf.download(instrument, period='25y')['Adj Close']
 
