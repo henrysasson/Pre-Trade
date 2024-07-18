@@ -15,6 +15,22 @@ st.title('Trading Tool')
 st.markdown('##')
 
 
+def mixed_vol_calc (
+    vol = daily_returns.ewm(adjust=True, span=35, min_periods=min_periods).std()
+
+    slow_vol_days = slow_vol_years * 256
+    long_vol = vol.ewm(span=slow_vol_days).mean()
+
+    vol = long_vol * proportion_of_slow_vol + vol * (1 - proportion_of_slow_vol)
+
+    vol = apply_min_vol(vol, vol_abs_min=vol_abs_min)
+
+    return vol
+
+
+
+
+
 def quantile_of_points_in_data_series (data_series):
     
     data_series = data_series.fillna(0)
@@ -37,7 +53,7 @@ def volatility_regime_multiplier (price):
     
     daily_returns = price.pct_change()
     
-    anual_std = sass.mixed_vol_calc(daily_returns) * 16
+    anual_std = mixed_vol_calc(daily_returns) * 16
      
     ten_year_average = anual_std.rolling(2500, min_periods=10).mean()
     
@@ -71,7 +87,7 @@ def ewmac (price, Lfast, Lslow=None):
     
     
     # Volatility adjustment
-    stdev_returns = sass.mixed_vol_calc(price.diff())
+    stdev_returns = mixed_vol_calc(price.diff())
     vol_adj_ewmac = raw_ewmac / stdev_returns
     
     
