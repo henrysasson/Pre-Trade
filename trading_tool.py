@@ -18,7 +18,7 @@ st.markdown('##')
 def mixed_vol_calc (daily_returns):
     vol = daily_returns.ewm(adjust=True, span=35, min_periods=35).std()
 
-    slow_vol_days = slow_vol_years * 256
+    slow_vol_days = 10 * 256
     long_vol = vol.ewm(span=slow_vol_days).mean()
 
     vol = long_vol * proportion_of_slow_vol + vol * (1 - proportion_of_slow_vol)
