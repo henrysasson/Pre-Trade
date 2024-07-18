@@ -193,7 +193,7 @@ fig.update_layout(
 )
 
 # Eixo Y do primeiro gráfico (Indicator)
-fig.update_yaxes(title_text="Forecast", row=1, col=1)
+fig.update_yaxes(title_text="Indicator", row=1, col=1)
 
 # Eixo Y do segundo gráfico (Price)
 fig.update_yaxes(title_text="Price", row=2, col=1)
