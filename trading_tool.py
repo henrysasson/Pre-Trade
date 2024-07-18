@@ -1,7 +1,6 @@
 import pandas as pd
 import datetime
 import numpy as np
-import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import plotly.express as px
