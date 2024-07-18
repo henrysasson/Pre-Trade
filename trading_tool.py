@@ -160,7 +160,7 @@ def forecast_metric(value):
 
     return reading
 
-
+st.markdown('##')
 # Creating the DataFrame using the specified structure
 data_values = [-20, -15, -10, -5, 0, 5, 10, 15, 20]
 columns = ["Very strong sell", "Strong Sell", "Sell", "Weak sell", "Neutral", "Weak buy", "Buy", "Strong buy", "Very strong buy"]
@@ -199,7 +199,7 @@ fig.update_yaxes(title_text="Forecast", row=1, col=1)
 fig.update_yaxes(title_text="Price", row=2, col=1)
 
 # Configurando o layout
-fig.update_layout( width=1500,  # Largura do gráfico
+fig.update_layout( width=1600,  # Largura do gráfico
                 height=700  # Altura do gráfico
             )
 
