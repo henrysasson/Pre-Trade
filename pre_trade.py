@@ -10,6 +10,8 @@ st.set_page_config(page_title='HS Pre Trade', layout='wide')
 
 st.title('Expected Risk')
 st.markdown('##')
+st.markdown("If you don't know the ticker, check on [Yahoo Finance](https://finance.yahoo.com/)")
+st.markdown('##')
 
 def get_data(tickers):
     data = yf.download(tickers, period='5y')['Adj Close']
