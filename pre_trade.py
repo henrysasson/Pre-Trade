@@ -187,11 +187,13 @@ if tickers and exposure:
     # Exibindo o gráfico
     st.plotly_chart(fig, use_container_width=True)
 
+    st.plotly_chart(fig)
+
+
     
 
 
 else:
     st.text(' ')
 # Exibindo a figura
-st.plotly_chart(fig)
 
