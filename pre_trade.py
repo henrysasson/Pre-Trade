@@ -13,7 +13,7 @@ import warnings
 # Suppress FutureWarnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
-st.set_page_config(page_title='Pre Trade', layout='wide')
+st.set_page_config(page_title='HS Pre Trade', layout='wide')
 
 st.title('Expected Risk')
 st.markdown('##')
