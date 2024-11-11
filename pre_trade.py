@@ -186,12 +186,7 @@ if tickers and exposure:
     st.text(f"The current expected risk of the portfolio is: {expected_risk_df.iloc[-1].values[0] * 100:.2f}%")
 
     # Exibindo o gráfico
-    st.plotly_chart(fig, use_container_width=True)
-
-    st.plotly_chart(fig)
-
-
-    
+    st.plotly_chart(fig, use_container_width=True)    
 
 
 else:
